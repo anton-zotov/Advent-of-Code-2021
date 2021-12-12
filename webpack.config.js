@@ -33,7 +33,7 @@ module.exports = {
         contentBase: './dist',
     },
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({ title: 'Advent of Code 2021' }),
         new CleanWebpackPlugin(),
     ],
     resolve: {
