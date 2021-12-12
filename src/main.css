@@ -14,3 +14,13 @@
 .day:nth-child(even) {
     background-color: #d0d0d0;
 }
+
+.toggle {
+    display: none;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.custom-html.hidden{
+    display: none;
+}

@@ -46,8 +46,10 @@ function getLifeSupportRating(report: string[]): number {
 }
 
 export function runDay3(): DayResults {
-    return [
-        ['power comsumption', getPowerConsumption(report)],
-        ['life support rating', getLifeSupportRating(report)],
-    ];
+    return {
+        results: [
+            ['power comsumption', getPowerConsumption(report)],
+            ['life support rating', getLifeSupportRating(report)],
+        ],
+    };
 }

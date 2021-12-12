@@ -56,11 +56,16 @@ function getFinalPositionUsingAim(commands: Command[]): number {
 }
 
 export function runDay2(): DayResults {
-    return [
-        ['multiplication of final horizontal position by final depth', getFinalPosition(commands)],
-        [
-            'multiplication of final horizontal position by final depth using aim',
-            getFinalPositionUsingAim(commands),
+    return {
+        results: [
+            [
+                'multiplication of final horizontal position by final depth',
+                getFinalPosition(commands),
+            ],
+            [
+                'multiplication of final horizontal position by final depth using aim',
+                getFinalPositionUsingAim(commands),
+            ],
         ],
-    ];
+    };
 }

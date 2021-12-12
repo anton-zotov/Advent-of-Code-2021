@@ -30,8 +30,10 @@ function getIncreaseCountSlidingWindow(depths: number[], windowSize: number): nu
 }
 
 export function runDay1(): DayResults {
-    return [
-        ['increase count', getIncreaseCount(depths)],
-        ['increase count sliding window', getIncreaseCountSlidingWindow(depths, 3)],
-    ];
+    return {
+        results: [
+            ['increase count', getIncreaseCount(depths)],
+            ['increase count sliding window', getIncreaseCountSlidingWindow(depths, 3)],
+        ],
+    };
 }

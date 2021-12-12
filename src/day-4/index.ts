@@ -76,8 +76,10 @@ function getLastToWinScore({ draws, boards }: Input): number {
 }
 
 export function runDay4(): DayResults {
-    return [
-        ['winner score', getWinnerScore({ draws, boards })],
-        ['last to win score', getLastToWinScore({ draws, boards })],
-    ];
+    return {
+        results: [
+            ['winner score', getWinnerScore({ draws, boards })],
+            ['last to win score', getLastToWinScore({ draws, boards })],
+        ],
+    };
 }
