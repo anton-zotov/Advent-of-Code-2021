@@ -1,10 +1,11 @@
 import './main.css';
+import { DayResults } from './day-result';
 import { runDay1 } from './day-1';
 import { runDay2 } from './day-2';
 import { runDay3 } from './day-3';
-import { DayResults } from './day-result';
+import { runDay4 } from './day-4';
 
-const days = [runDay1, runDay2, runDay3];
+const days = [runDay1, runDay2, runDay3, runDay4];
 
 for (let dayNum = 0; dayNum < days.length; dayNum++) {
     const results = days[dayNum]();
