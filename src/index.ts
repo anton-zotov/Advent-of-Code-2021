@@ -5,8 +5,9 @@ import { runDay2 } from './day-2';
 import { runDay3 } from './day-3';
 import { runDay4 } from './day-4';
 import { runDay5 } from './day-5';
+import { runDay6 } from './day-6';
 
-const days = [runDay1, runDay2, runDay3, runDay4, runDay5];
+const days = [runDay1, runDay2, runDay3, runDay4, runDay5, runDay6];
 
 for (let dayNum = 0; dayNum < days.length; dayNum++) {
     document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum));
