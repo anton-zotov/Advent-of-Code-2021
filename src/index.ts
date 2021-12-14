@@ -1,21 +1,12 @@
 import './main.css';
 import { Result } from './day-result';
-import { runDay1 } from './day-1';
-import { runDay2 } from './day-2';
-import { runDay3 } from './day-3';
-import { runDay4 } from './day-4';
-import { runDay5 } from './day-5';
-import { runDay6 } from './day-6';
-
-const days = [runDay1, runDay2, runDay3, runDay4, runDay5, runDay6];
+import { days } from './days';
 
 for (let dayNum = 0; dayNum < days.length; dayNum++) {
-    document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum));
-
-    const dayElement = document.querySelector<HTMLDivElement>('.day:last-child');
     const { results, draw } = days[dayNum]();
 
-    dayElement.querySelector('.results').insertAdjacentHTML('beforeend', getResultsHtml(results));
+    const dayElement = document.querySelector<HTMLDivElement>('.day:last-child');
+    document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum, results));
 
     if (draw) {
         const toggle = dayElement.querySelector<HTMLButtonElement>('.toggle');
@@ -30,11 +21,11 @@ for (let dayNum = 0; dayNum < days.length; dayNum++) {
     }
 }
 
-function getDayHtml(dayNum: number): string {
+function getDayHtml(dayNum: number, results: Result[]): string {
     return `
     <div class="day">
         <div class="header">Day ${dayNum + 1}</div>
-        <div class="results"></div>
+        <div class="results">${getResultsHtml(results)}</div>
         <button type="button" class="toggle">toggle</button>
         <div class="custom-html hidden"></div>
     </div>
