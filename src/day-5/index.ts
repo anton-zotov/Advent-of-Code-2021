@@ -1,4 +1,4 @@
-import { createCanvas } from '../day-9/utils';
+import { createCanvas } from '../utils';
 import { DayResults } from '../day-result';
 import * as input from './input.json';
 

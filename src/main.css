@@ -21,6 +21,10 @@
     margin-top: 5px;
 }
 
+.custom-html {
+    margin-top: 5px;
+}
+
 .custom-html.hidden{
     display: none;
 }

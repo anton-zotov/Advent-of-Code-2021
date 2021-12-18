@@ -14,7 +14,10 @@ for (let dayNum = days.length - 1; dayNum >= 0; dayNum--) {
         toggle.onclick = () => {
             if (!toggle.dataset.drawn) {
                 toggle.dataset.drawn = 'true';
-                draw(dayElement.querySelector('.custom-html'));
+                setTimeout(() => {
+                    draw(dayElement.querySelector('.custom-html'))
+                    dayElement.querySelector('.loading').remove();
+                });
             }
             dayElement.querySelector<HTMLElement>('.custom-html').classList.toggle('hidden');
         };
@@ -27,7 +30,8 @@ function getDayHtml(dayNum: number, results: Result[]): string {
         <div class="header">Day ${dayNum + 1}</div>
         <div class="results">${getResultsHtml(results)}</div>
         <button type="button" class="toggle">toggle</button>
-        <div class="custom-html hidden"></div>
+        <div class="custom-html hidden">
+            <div class="loading">Loading...</div></div>
     </div>
     `;
 }

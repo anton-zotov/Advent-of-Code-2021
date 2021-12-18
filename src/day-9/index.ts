@@ -1,6 +1,6 @@
 import { DayResults } from '../day-result';
 import * as input from './input.json';
-import { createCanvas } from './utils';
+import { createCanvas, createMatrixIterator } from '../utils';
 
 const heightMap: number[][] = (input as any).default.map((heights) => [...heights].map((h) => +h));
 const mapWidth = heightMap[0].length;
@@ -10,6 +10,7 @@ const basins = Array.from({ length: mapHeight }).map((_) =>
 ) as number[][];
 const basinSizes = [];
 const getHeight = (x: number, y: number) => heightMap[y][x];
+const iterateMap = createMatrixIterator(heightMap);
 const lowPoints = getLowPoints();
 
 function getNeighbors(x: number, y: number) {
@@ -23,14 +24,6 @@ function getNeighbors(x: number, y: number) {
 
 function getNeighborHeights(x: number, y: number) {
     return getNeighbors(x, y).map(([x, y]) => getHeight(x, y));
-}
-
-function* iterateMap() {
-    for (let x = 0; x < mapWidth; x++) {
-        for (let y = 0; y < mapHeight; y++) {
-            yield [x, y, getHeight(x, y)];
-        }
-    }
 }
 
 function getLowPoints(): [number, number][] {
