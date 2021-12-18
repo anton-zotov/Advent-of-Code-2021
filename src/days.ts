@@ -5,5 +5,6 @@ import { runDay4 } from './day-4';
 import { runDay5 } from './day-5';
 import { runDay6 } from './day-6';
 import { runDay7 } from './day-7';
+import { runDay8 } from './day-8';
 
-export const days = [runDay1, runDay2, runDay3, runDay4, runDay5, runDay6, runDay7];
+export const days = [runDay1, runDay2, runDay3, runDay4, runDay5, runDay6, runDay7, runDay8];
