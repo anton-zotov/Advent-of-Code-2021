@@ -1,3 +1,4 @@
+import { createCanvas } from '../day-9/utils';
 import { DayResults } from '../day-result';
 import * as input from './input.json';
 
@@ -68,17 +69,9 @@ function drawMap(lines: VentLine[], node: HTMLElement): void {
     const map = createMap(lines);
     fillMap(map, lines);
 
-    const canvas = document.createElement('canvas');
     const pointSize = 1;
-    canvas.width = map.width * pointSize;
-    canvas.height = map.height * pointSize;
-    canvas.style.border = '1px solid black';
-    node.append(canvas);
-    const ctx = canvas.getContext('2d');
+    const ctx = createCanvas(node, map.width * pointSize, map.height * pointSize);
     const colorStep = Math.floor(255 / map.maxOverlapCount);
-
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     for (let r in map.rows) {
         const row = map.rows[r];

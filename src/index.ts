@@ -2,11 +2,11 @@ import './main.css';
 import { Result } from './day-result';
 import { days } from './days';
 
-for (let dayNum = 0; dayNum < days.length; dayNum++) {
+for (let dayNum = days.length - 1; dayNum >= 0; dayNum--) {
     const { results, draw } = days[dayNum]();
 
-    const dayElement = document.querySelector<HTMLDivElement>('.day:last-child');
     document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum, results));
+    const dayElement = document.querySelector<HTMLDivElement>('.day:last-child');
 
     if (draw) {
         const toggle = dayElement.querySelector<HTMLButtonElement>('.toggle');
