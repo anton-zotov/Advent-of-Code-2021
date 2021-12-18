@@ -65,7 +65,7 @@ function getTotalFlashAmount(steps: number): number {
 }
 
 function draw(node: HTMLElement): void {
-    const pointSize = 5;
+    const pointSize = 20;
     const getC = (level: number) => Math.floor((level / 9) * 200);
     const ctx = createCanvas(node, size * pointSize, size * pointSize);
 
@@ -88,7 +88,7 @@ function draw(node: HTMLElement): void {
 export function runDay11(): DayResults {
     return {
         results: [
-            ['total flashes are there after 100 steps', getTotalFlashAmount(100)],
+            ['total flashes after 100 steps', getTotalFlashAmount(100)],
             [
                 'first synchro flash',
                 (() => {
