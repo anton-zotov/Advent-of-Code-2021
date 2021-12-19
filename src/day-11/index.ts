@@ -1,5 +1,6 @@
 import { DayResults } from '../day-result';
-import { copyMatrix, createCanvas, createMatrixIterator } from '../utils';
+import { createCanvas } from '../utils/canvas';
+import { copyMatrix, createMatrixIterator } from '../utils/matrix';
 import * as input from './input.json';
 
 const energyLevels: number[][] = (input as any).default.map((s) => [...s].map((c) => +c));

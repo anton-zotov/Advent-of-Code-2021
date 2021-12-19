@@ -1,6 +1,7 @@
 import { DayResults } from '../day-result';
 import * as input from './input.json';
-import { createCanvas, createMatrixIterator } from '../utils';
+import { createCanvas } from '../utils/canvas';
+import { createMatrixIterator } from '../utils/matrix';
 
 const heightMap: number[][] = (input as any).default.map((heights) => [...heights].map((h) => +h));
 const mapWidth = heightMap[0].length;
