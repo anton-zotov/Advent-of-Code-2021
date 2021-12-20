@@ -1,6 +1,7 @@
 import { createCanvas } from '../utils/canvas';
 import { DayResults } from '../day-result';
 import * as input from './input.json';
+import { createMatrix } from '../utils/matrix';
 
 type Map = {
     rows: number[][];
@@ -25,9 +26,7 @@ function createMap(lines: VentLine[]): Map {
     }
 
     return {
-        rows: Array.from({ length: maxHeight + 1 }).map((_) =>
-            Array.from({ length: maxWidth + 1 }).fill(0),
-        ) as number[][],
+        rows: createMatrix(maxWidth + 1, maxHeight + 1),
         width: maxWidth + 1,
         height: maxHeight + 1,
         maxOverlapCount: 0,

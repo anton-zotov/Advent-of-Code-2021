@@ -3,9 +3,11 @@ import { Result } from './day-result';
 import { days } from './days';
 
 for (let dayNum = days.length - 1; dayNum >= 0; dayNum--) {
+    const start = performance.now();
     const { results, draw } = days[dayNum]();
+    const duration = Math.round(performance.now() - start);
 
-    document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum, results));
+    document.body.insertAdjacentHTML('beforeend', getDayHtml(dayNum, duration, results));
     const dayElement = document.querySelector<HTMLDivElement>('.day:last-child');
 
     if (draw) {
@@ -24,10 +26,10 @@ for (let dayNum = days.length - 1; dayNum >= 0; dayNum--) {
     }
 }
 
-function getDayHtml(dayNum: number, results: Result[]): string {
+function getDayHtml(dayNum: number, duration: number, results: Result[]): string {
     return `
     <div class="day">
-        <div class="header">Day ${dayNum + 1}</div>
+        <div class="header">Day ${dayNum + 1} (${duration}ms)</div>
         <div class="results">${getResultsHtml(results)}</div>
         <button type="button" class="toggle">toggle</button>
         <div class="custom-html hidden">

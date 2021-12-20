@@ -1,14 +1,12 @@
 import { DayResults } from '../day-result';
 import * as input from './input.json';
 import { createCanvas } from '../utils/canvas';
-import { createMatrixIterator } from '../utils/matrix';
+import { createMatrix, createMatrixIterator } from '../utils/matrix';
 
 const heightMap: number[][] = (input as any).default.map((heights) => [...heights].map((h) => +h));
 const mapWidth = heightMap[0].length;
 const mapHeight = heightMap.length;
-const basins = Array.from({ length: mapHeight }).map((_) =>
-    Array.from({ length: mapWidth }).fill(-1),
-) as number[][];
+const basins = createMatrix(mapWidth, mapHeight, -1);
 const basinSizes = [];
 const getHeight = (x: number, y: number) => heightMap[y][x];
 const iterateMap = createMatrixIterator(heightMap);
