@@ -27,5 +27,9 @@
         "webpack": "^5.40.0",
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^3.11.2"
+    },
+    "dependencies": {
+        "@types/js-priority-queue": "0.0.6",
+        "js-priority-queue": "^0.1.5"
     }
 }

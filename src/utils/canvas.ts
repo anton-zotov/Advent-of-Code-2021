@@ -46,9 +46,10 @@ export function line(
     ctx.stroke();
 }
 
-export function text(ctx, text, x, y, color = 'black', fontSize = 16) {
+export function text(ctx, text, x, y, color = 'black', fontSize = 16, fontWeight = 'normal') {
     ctx.fillStyle = color;
     ctx.font = `${fontSize}px serif`;
+
     ctx.textAlign = 'center';
     ctx.fillText(text, x, y);
 }
