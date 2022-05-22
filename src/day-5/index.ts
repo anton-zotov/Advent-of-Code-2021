@@ -50,7 +50,7 @@ function fillMap(map: Map, lines: VentLine[]): void {
     }
 }
 
-function getOverlappingPointsCount(lines: VentLine[], shouldExcludeDiagonalLines: boolean) {
+function getOverlappingPointCount(lines: VentLine[], shouldExcludeDiagonalLines: boolean) {
     const map = createMap(lines);
     fillMap(map, shouldExcludeDiagonalLines ? excludeDiagonalLines(lines) : lines);
 
@@ -85,10 +85,10 @@ function drawMap(lines: VentLine[], node: HTMLElement): void {
 export function runDay5(): DayResults {
     return {
         results: [
-            ['overlapping points count', getOverlappingPointsCount(ventLines, true)],
+            ['overlapping point count', getOverlappingPointCount(ventLines, true)],
             [
-                'overlapping points count with horizontal lines',
-                getOverlappingPointsCount(ventLines, false),
+                'overlapping point count with diagonal lines',
+                getOverlappingPointCount(ventLines, false),
             ],
         ],
         draw: (node: HTMLElement) => drawMap(ventLines, node),
