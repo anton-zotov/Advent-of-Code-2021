@@ -8,6 +8,7 @@ import { runDay15 } from './day-15';
 import { runDay16 } from './day-16';
 import { runDay17 } from './day-17';
 import { runDay18 } from './day-18';
+import { runDay19 } from './day-19';
 import { runDay2 } from './day-2';
 import { runDay3 } from './day-3';
 import { runDay4 } from './day-4';
@@ -36,4 +37,5 @@ export const days = [
     runDay16,
     runDay17,
     runDay18,
+    runDay19,
 ];
